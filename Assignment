@@ -1,0 +1,17 @@
+// 1. To find the Simple Interest
+Let principal=Number(prompt("Enter principal amount"));
+Let rate=Number(prompt("Enter rate of interst 1 to 10%"));
+Let time=Number(prompt("How many months enter 1-12"));
+let result(principal* rate* interst/100);
+alert(Simple Interst);
+console.log("Simple Interst");
+
+// To find Area Of Circle
+Let radius=Number(prompt(Enter radius to get the value of area));
+let result(3.14*radius*radius);
+console.log("Area of Circle");
+
+// To fine the Volume of cube
+Let edge=Number(prompt("enter edge you will get the area of cube"));
+Let result(6*edge*edge);
+console.log(Voume of cube);

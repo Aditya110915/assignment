@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGE</title>
+</head>
+<body>
+    <link href="css/style1.css" rel="stylesheet" />
+    <script>
+        // question no 1 here checking person is eligible for voting or not
+        function check()
+        {
+            let number;
+            number=Number(document.getElementById("no").value);
+            if(number>=18)
+            {
+               alert("You are an adult");
+            }
+            else
+            {
+               alert("You are a minor");
+            }
+            
+        }
+        
+        function check1()
+        {
+            let name=document.getElementById("name").value;
+            let pass=document.getElementById("pass").value;
+            if(name=="username" && pass=="password")
+            {
+                alert("Login successful");
+            }
+            else
+            {
+                alert("Login Not successful");
+            }
+        }
+       function check2()
+       {
+             let no=Math.floor(Math.random() * 101);
+            document.getElementById("demo").innerHTML=no;
+            if(no%2==0)
+            {
+                alert("no is even");
+            }
+            else
+            {
+                alert("no is odd");
+            }
+       }
+       function check3()
+       {
+            let col=document.getElementById("color").value;
+            if(col=="red")
+            {
+                alert("red is a beautiful color");
+            }
+            else
+            {
+                alert("i like your choice");
+            }
+       }
+       function check4()
+       {
+            
+            let number;
+            number=Number(document.getElementById("nos").value);
+            if(number%2==0)
+            {
+                alert("the number is even");
+            }
+            else
+            {
+                alert("the number is odd");
+            }
+       }
+       function check5()
+       {
+             
+            let number1;
+            number1=Number(document.getElementById("no1").value);
+            let number2;
+            number2=Number(document.getElementById("no2").value);
+            if(number1>number2)
+            {
+                alert("the first number is greater than the second");
+            }
+            else
+            {
+                alert("the second number is greater than first");
+            }
+       }
+       function check6()
+       {
+            
+            let number;
+            number=Number(document.getElementById("nums").value);
+            if(number>10)
+            {
+                alert("the number is greater than 10");
+            }
+            else
+            {
+                alert("the number is less than or equal to 10");
+            }
+       }
+       function nos()
+       {
+            let i;
+            for(i=1;i<=10;i++)
+            {
+                alert(i);
+            }
+       }
+       function enos()
+       {
+            let i;
+            for(i=1;i<=10;i++)
+            {
+                if(i%2==0)
+                {
+                    alert(i);
+                }
+            }
+       }
+       function onos()
+       {
+            let i;
+            for(i=1;i<=10;i++)
+            {
+                if(i%2!=0)
+                {
+                    alert(i);
+                }
+            }
+       }
+    </script>
+</head>
+    <div class="sec">
+        <form>
+            <label>Enter a No</label>
+            <input type="text" id="no" required>
+            <button  onclick="check()"> check eligibility</button>
+        </form>
+        <form>
+            <label>Enter your username</label>
+            <input type="text" id="name" required><br>
+            <label>Enter your password</label>
+            <input type="text" id="pass" required>
+            <button  onclick="check1()"> login</button>
+        </form>
+        
+        <button onclick="check2()">check random no is even or odd</button>
+        <p id="demo"></p>
+        <form>
+            <label>Enter your favorite color</label>
+            <input type="text" id="color">
+            <button onclick="check3()">Click here to check message for you</button>
+        </form>
+        <form>
+            <label> Enter a no</label><br>
+            <input type="text" id="nos">
+            <button onclick="check4()">check no is even or odd</button>
+        </form>
+        <form>
+            <label> Enter first no</label><br>
+            <input type="text" id="no1"><br>
+            <label> Enter second no</label><br>
+            <input type="text" id="no2">
+            <button onclick="check5()">check no is even or odd</button>
+        </form>
+        <form>
+            <label> Enter a no</label><br>
+            <input type="text" id="nums">
+            <button onclick="check6()">check no is even or odd</button>
+        </form>
+        
+        <button onclick="nos()">check to see numbers from 1-10</button>
+        <button onclick="enos()">check to see even numbers from 1-10</button>
+        <button onclick="onos()">check to see even numbers from 1-10</button>
+    </div>
+    
+    
+</body>
+</html>

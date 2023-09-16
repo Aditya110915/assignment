@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Array</title>
+</head>
+<body>
+    <h1>Reverse Array</h1>
+    <p>Enter elements separated by commas:</p>
+    <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5">
+    <button onclick="reverseArray()">Reverse Array</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseArray() {
+            const inputElement = document.getElementById("arrayInput");
+            const resultElement = document.getElementById("result");
+
+            // Get the user input and split it into an array.
+            const inputText = inputElement.value;
+            const originalArray = inputText.split(",");
+
+            // Reverse the array by using the reverse() method.
+            const reversedArray = originalArray.reverse();
+
+            // Join the reversed array back into a string and display it.
+            const reversedString = reversedArray.join(", ");
+            resultElement.textContent = "Reversed Array: " + reversedString;
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find minimum number in array</title>
+    </head>
+<body>
+    <h1>Find Minimum Number in Array</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="numberInput" placeholder="e.g., 5, 2, 9, 1, 5, 6">
+    <button onclick="findMinimum()">Find Minimum</button>
+    <p id="result"></p>
+
+    <script>
+        function findMinimum() {
+            let inputElement = document.getElementById("numberInput");
+            let resultElement = document.getElementById("result");
+
+            // Get the user input and split it into an array of numbers.
+            let inputText = inputElement.value;
+            let numbers = inputText.split(",").map(Number);
+
+            if (numbers.some(isNaN)) {
+                resultElement.textContent = "Invalid input. Please enter valid numbers separated by commas.";
+            } else {
+                // Find the minimum number in the array.
+                let minimumNumber = Math.min(...numbers);
+
+                resultElement.textContent = "The minimum number is: " + minimumNumber;
+            }
+        }
+    </script> 
+</body>
+</html>

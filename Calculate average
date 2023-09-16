@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Average</title>
+</head>
+<body>
+    <h1>Calculate Average</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="numberInput" placeholder="e.g., 5, 2, 9, 1, 5, 6">
+    <button onclick="calculateAverage()">Calculate Average</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateAverage() {
+            let inputElement = document.getElementById("numberInput");
+            let resultElement = document.getElementById("resullet
+            // Get the user input and split it into an array of numbers.
+            let inputText = inputElement.value;
+            const numbers = inputText.split(",").map(Numblet
+            if (numbers.some(isNaN)) {
+                resultElement.textContent = "Invalid input. Please enter valid numbers separated by commas.";
+            } else {
+                // Calculate the average of the numbers.
+            let sum = numbers.reduce((acc, num) => acc + num, 0);
+            let average = sum / numbers.length;
+
+                resultElement.textContent = "The average is: " + average.toFixed(2); // Display with 2 decimal places.
+            }
+        }
+    </script>
+</body>
+</html>

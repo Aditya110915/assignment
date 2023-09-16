@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove even numbers</title>
+</head>
+<body>
+    <h1>Remove Even Numbers</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="numberInput" placeholder="e.g., 5, 2, 9, 1, 5, 6">
+    <button onclick="removeEvenNumbers()">Remove Even Numbers</button>
+    <p id="result"></p>
+
+    <script>
+        function removeEvenNumbers() {
+            let inputElement = document.getElementById("numberInput");
+            let resultElement = document.getElementById("result");
+
+            // Get the user input and split it into an array of numbers.
+            let inputText = inputElement.value;
+            let numbers = inputText.split(",").map(Number);
+
+            if (numbers.some(isNaN)) {
+                resultElement.textContent = "Invalid input. Please enter valid numbers separated by commas.";
+            } else {
+                // Filter out the even numbers from the array.
+                let oddNumbers = numbers.filter(num => num % 2 !== 0);
+
+                resultElement.textContent = "Array with even numbers removed: " + oddNumbers.join(", ");
+            }
+        }
+    </script>
+</body>
+</html>

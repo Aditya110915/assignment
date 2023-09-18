@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find minimum number in array</title>
+    </head>
+<body>
+    <h1>Find Minimum Number in Array</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="numberInput" placeholder="e.g., 5, 2, 9, 1, 5, 6">
+    <button onclick="findMinimum()">Find Minimum</button>
+    <p id="result"></p>
+
+    <script>
+        function findMinimum() {
+            let inputElement = document.getElementById("numberInput");
+            let resultElement = document.getElementById("result");
+
+            // Get the user input and split it into an array of numbers.
+            let inputText = inputElement.value;
+            let numbers = inputText.split(",").map(Number);
+
+            if (numbers.some(isNaN)) {
+                resultElement.textContent = "Invalid input. Please enter valid numbers separated by commas.";
+            } else {
+                // Find the minimum number in the array.
+                let minimumNumber = Math.min(...numbers);
+
+                resultElement.textContent = "The minimum number is: " + minimumNumber;
+            }
+        }
+    </script> 
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Array</title>
+</head>
+<body>
+    <h1>Reverse Array</h1>
+    <p>Enter elements separated by commas:</p>
+    <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5">
+    <button onclick="reverseArray()">Reverse Array</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseArray() {
+            let inputElement = document.getElementById("arrayInput");
+            let resultElement = document.getElementById("result");
+
+            // Get the user input and split it into an array.
+            let inputText = inputElement.value;
+            let originalArray = inputText.split(",");
+
+            // Reverse the array by using the reverse() method.
+            let reversedArray = originalArray.reverse();
+
+            // Join the reversed array back into a string and display it.
+            let reversedString = reversedArray.join(", ");
+            resultElement.textContent = "Reversed Array: " + reversedString;
+        }
+    </script>
+    
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Average</title>
+</head>
+<body>
+    <h1>Calculate Average</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="numberInput" placeholder="e.g., 5, 2, 9, 1, 5, 6">
+    <button onclick="calculateAverage()">Calculate Average</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateAverage() {
+            let inputElement = document.getElementById("numberInput");
+            let resultElement = document.getElementById("resullet
+            // Get the user input and split it into an array of numbers.
+            let inputText = inputElement.value;
+            const numbers = inputText.split(",").map(Numblet
+            if (numbers.some(isNaN)) {
+                resultElement.textContent = "Invalid input. Please enter valid numbers separated by commas.";
+            } else {
+                // Calculate the average of the numbers.
+            let sum = numbers.reduce((acc, num) => acc + num, 0);
+            let average = sum / numbers.length;
+
+                resultElement.textContent = "The average is: " + average.toFixed(2); // Display with 2 decimal places.
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove even numbers</title>
+</head>
+<body>
+    <h1>Remove Even Numbers</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="numberInput" placeholder="e.g., 5, 2, 9, 1, 5, 6">
+    <button onclick="removeEvenNumbers()">Remove Even Numbers</button>
+    <p id="result"></p>
+
+    <script>
+        function removeEvenNumbers() {
+            let inputElement = document.getElementById("numberInput");
+            let resultElement = document.getElementById("result");
+
+            // Get the user input and split it into an array of numbers.
+            let inputText = inputElement.value;
+            let numbers = inputText.split(",").map(Number);
+
+            if (numbers.some(isNaN)) {
+                resultElement.textContent = "Invalid input. Please enter valid numbers separated by commas.";
+            } else {
+                // Filter out the even numbers from the array.
+                let oddNumbers = numbers.filter(num => num % 2 !== 0);
+
+                resultElement.textContent = "Array with even numbers removed: " + oddNumbers.join(", ");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find common element</title>
+</head>
+<body>
+    <h1>Find Common Elements</h1>
+    <p>Enter elements for the first array separated by commas:</p>
+    <input type="text" id="array1Input" placeholder="e.g., 1, 2, 3, 4, 5">
+    <p>Enter elements for the second array separated by commas:</p>
+    <input type="text" id="array2Input" placeholder="e.g., 3, 4, 5, 6, 7">
+    <button onclick="findCommonElements()">Find Common Elements</button>
+    <p id="result"></p>
+
+    <script>
+        function findCommonElements() {
+            let array1Element = document.getElementById("array1Input");
+            let array2Element = document.getElementById("array2Input");
+            let resultElement = document.getElementById("result");
+
+            // Get the user input and split it into arrays.
+            let array1Text = array1Element.value;
+            let array2Text = array2Element.value;
+            let array1 = array1Text.split(",").map(Number);
+            let array2 = array2Text.split(",").map(Number);
+
+            if (array1.some(isNaN) || array2.some(isNaN)) {
+                resultElement.textContent = "Invalid input. Please enter valid numbers separated by commas for both arrays.";
+            } else {
+                // Find common elements by using the filter() method.
+            let commonElements = array1.filter(element => array2.includes(element));
+
+                resultElement.textContent = "Common Elements: " + commonElements.join(", ");
+            }
+        }
+    </script>
+    
+</body>
+</html>

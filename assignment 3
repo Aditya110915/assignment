@@ -1,0 +1,262 @@
+// Reverse a string without using the reverse method or a function 
+
+function reverseString(str) {
+    let reversed = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+      reversed += str[i];
+    }
+    return reversed;
+  }
+  
+  let originalString = "Hello, World!";
+  let reversedString = reverseString(originalString);
+  console.log(reversedString); // Outputs: "!dlroW ,olleH"
+ 
+  
+  
+//   Count the number of vowels in a string without using functions.
+
+function countVowels(str) {
+    let count = 0;
+    let vowels = "aeiouAEIOU"; // List of vowel characters
+  
+    for (let i = 0; i < str.length; i++) {
+      if (vowels.includes(str[i])) {
+        count++;
+      }
+    }
+  
+    return count;
+  }
+  
+  let inputString = "Hello, World!";
+  let vowelCount = countVowels(inputString);
+  console.log(`Number of vowels: ${vowelCount}`);
+
+
+//   Check if a string is a palindrome without using functions.
+
+function countVowels(str) {
+    let count = 0;
+    let vowels = "aeiouAEIOU"; // List of vowel characters
+  
+    for (let i = 0; i < str.length; i++) {
+      if (vowels.includes(str[i])) {
+        count++;
+      }
+    }
+  
+    return count;
+  }
+  
+  let inputString = "Hello, World!";
+  let vowelCount = countVowels(inputString);
+  console.log(`Number of vowels: ${vowelCount}`);
+
+
+
+// Capitalize the first letter of each word in a sentence without using functions.
+
+function capitalizeWords(sentence) {
+    let result = '';
+    let capitalizeNext = true;
+  
+    for (let i = 0; i < sentence.length; i++) {
+      let currentChar = sentence[i];
+  
+      if (capitalizeNext && /[a-zA-Z]/.test(currentChar)) {
+        result += currentChar.toUpperCase();
+        capitalizeNext = false;
+      } else {
+        result += currentChar.toLowerCase();
+        if (currentChar === ' ' || currentChar === '\t' || currentChar === '\n') {
+          capitalizeNext = true;
+        }
+      }
+    }
+  
+    return result;
+  }
+  
+  let inputSentence = "hello world\tthis is\na test";
+  let capitalizedResult = capitalizeWords(inputSentence);
+  console.log(capitalizedResult);
+
+//    Remove all spaces from a string without using functions.
+
+function removeSpaces(str) {
+    let result = '';
+    
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] !== ' ') {
+        result += str[i];
+      }
+    }
+    
+    return result;
+  }
+  
+  let inputString = "This is a test string";
+  let stringWithoutSpaces = removeSpaces(inputString);
+  console.log(stringWithoutSpaces);
+
+//   Find the longest word in a sentence without using functions.
+
+function findLongestWord(sentence) {
+    let currentWord = '';
+    let longestWord = '';
+    
+    for (let i = 0; i < sentence.length; i++) {
+      let currentChar = sentence[i];
+  
+      // Check for word boundaries (space or end of string)
+      if (currentChar === ' ' || i === sentence.length - 1) {
+        if (i === sentence.length - 1) {
+          currentWord += currentChar;
+        }
+  
+        if (currentWord.length > longestWord.length) {
+          longestWord = currentWord;
+        }
+  
+        currentWord = '';
+      } else {
+        currentWord += currentChar;
+      }
+    }
+  
+    return longestWord;
+  }
+  
+  let inputSentence = "The quick brown fox jumped over the lazy dog";
+  let longest = findLongestWord(inputSentence);
+  console.log(`The longest word is: ${longest}`);
+
+
+//   Check if two strings are anagrams of each other without using functions.
+
+function areAnagrams(str1, str2) {
+    if (str1.length !== str2.length) {
+      return false; // If the lengths are different, they can't be anagrams
+    }
+  
+    let charCount = {};
+  
+    // Count characters in the first string
+    for (let i = 0; i < str1.length; i++) {
+      let char = str1[i];
+      charCount[char] = (charCount[char] || 0) + 1;
+    }
+  
+    // Subtract characters in the second string
+    for (let i = 0; i < str2.length; i++) {
+      let char = str2[i];
+      if (!charCount[char]) {
+        return false; // If a character doesn't exist in str1, they can't be anagrams
+      }
+      charCount[char] -= 1;
+    }
+  
+    // Check if all character counts are zero
+    for (let char in charCount) {
+      if (charCount[char] !== 0) {
+        return false; // If any count is not zero, they can't be anagrams
+      }
+    }
+  
+    return true;
+  }
+  
+  let string1 = "listen";
+  let string2 = "silent";
+  let result = areAnagrams(string1, string2);
+  
+  if (result) {
+    console.log("They are anagrams!");
+  } else {
+    console.log("They are not anagrams.");
+  }
+  
+
+
+
+  
+//   Replace all occurrences of a given substring with another substring in a string without using functions.
+
+function customReplace(inputString, searchSubstr, replaceSubstr) {
+    let result = '';
+    let currentIndex = 0;
+  
+    while (currentIndex < inputString.length) {
+      let startIndex = inputString.indexOf(searchSubstr, currentIndex);
+  
+      if (startIndex === -1) {
+        result += inputString.slice(currentIndex);
+        break;
+      }
+  
+      result += inputString.slice(currentIndex, startIndex) + replaceSubstr;
+      currentIndex = startIndex + searchSubstr.length;
+    }
+  
+    return result;
+  }
+  
+  let inputString = "Hello, World! Hello, Universe!";
+  let searchSubstr = "Hello";
+  let replaceSubstr = "Hi";
+  let replacedString = customReplace(inputString, searchSubstr, replaceSubstr);
+  console.log(replacedString);
+
+
+//   Truncate a string to a specified length and add "..." at the end if the string is longer than the specified length without using functions.
+
+function customTruncate(inputString, maxLength) {
+    if (inputString.length <= maxLength) {
+      return inputString; // If the string is already shorter, no need to truncate
+    }
+  
+    let truncatedString = '';
+    for (let i = 0; i < maxLength; i++) {
+      truncatedString += inputString[i];
+    }
+  
+    return truncatedString + '...';
+  }
+  
+  let inputString = "This is a long string that needs truncation";
+  let maxLength = 15;
+  let truncatedResult = customTruncate(inputString, maxLength);
+  console.log(truncatedResult);
+
+
+
+// Determine if a string has balanced parentheses (e.g., "(()())" is balanced, but "())(" is not) without using functions.
+ 
+function isBalancedParentheses(str) {
+    let balance = 0;
+  
+    for (let i = 0; i < str.length; i++) {
+      let char = str[i];
+  
+      if (char === '(') {
+        balance++;
+      } else if (char === ')') {
+        balance--;
+  
+        // If we ever have more close parentheses than open ones, it's not balanced
+        if (balance < 0) {
+          return false;
+        }
+      }
+    }
+  
+    // If the balance is zero at the end, it's balanced
+    return balance === 0;
+  }
+  
+  let balancedString = "(()())";
+  let unbalancedString = "())(";
+  
+  console.log(`Is "${balancedString}" balanced? ${isBalancedParentheses(balancedString)}`);
+  console.log(`Is "${unbalancedString}" balanced? ${isBalancedParentheses(unbalancedString)}`);

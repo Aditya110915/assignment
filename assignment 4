@@ -1,0 +1,275 @@
+// Create a JavaScript program that uses a Map to store the names of five countries 
+// as keys and their corresponding capitals as values. Print out the names of all the countries and their capitals stored in the Map.
+
+let countryCapitalMap = new Map();
+
+// Add country-capital pairs to the Map
+countryCapitalMap.set("United States", "Washington, D.C.");
+countryCapitalMap.set("Canada", "Ottawa");
+countryCapitalMap.set("United Kingdom", "London");
+countryCapitalMap.set("France", "Paris");
+countryCapitalMap.set("Germany", "Berlin");
+
+// Print out the names of all countries and their capitals
+for (let [country, capital] of countryCapitalMap) {
+  console.log(`Country: ${country}, Capital: ${capital}`);
+}
+
+// Write a JavaScript program that takes an array of numbers as input and uses a Set to remove duplicates from the array. 
+// After removing duplicates, print the elements of the Set.
+
+
+function removeDuplicatesFromArray(arr) {
+    return [...new Set(arr)];
+  }
+  
+  // Input array with duplicates
+  let inputArray = [1, 2, 2, 3, 4, 4, 5, 6, 6];
+  
+  // Remove duplicates and store the result in a Set
+  let uniqueNumbersSet = new Set(removeDuplicatesFromArray(inputArray));
+  
+  // Print the elements of the Set
+  console.log("Unique numbers:");
+  for (let number of uniqueNumbersSet) {
+    console.log(number);
+  }
+
+
+
+
+//   Map Operations
+//   Implement a JavaScript program that demonstrates the following operations on a Map:
+  
+//   Add three key-value pairs to the Map.
+//   Print the keys and values in the Map.
+//   Check if a specific key exists in the Map.
+//   Remove one key-value pair from the Map.
+  
+
+
+  // Create a Map
+let myMap = new Map();
+
+// Add three key-value pairs to the Map
+myMap.set("name", "John");
+myMap.set("age", 30);
+myMap.set("city", "New York");
+
+// Print the keys and values in the Map
+console.log("Map Contents:");
+for (let[key, value] of myMap) {
+  console.log(`Key: ${key}, Value: ${value}`);
+}
+
+// Check if a specific key exists in the Map
+let keyToCheck = "age";
+if (myMap.has(keyToCheck)) {
+  console.log(`Key '${keyToCheck}' exists in the Map.`);
+} else {
+  console.log(`Key '${keyToCheck}' does not exist in the Map.`);
+}
+
+// Remove one key-value pair from the Map
+let keyToRemove = "age";
+if (myMap.has(keyToRemove)) {
+  myMap.delete(keyToRemove);
+  console.log(`Key '${keyToRemove}' was removed from the Map.`);
+} else {
+  console.log(`Key '${keyToRemove}' does not exist in the Map.`);
+}
+
+// Print the updated Map after removal
+console.log("Updated Map Contents:");
+for (let [key, value] of myMap) {
+  console.log(`Key: ${key}, Value: ${value}`);
+}
+
+// Set Set Operations
+// Create a JavaScript program that creates two Sets, one for storing even numbers between 1 and 10, and another for storing odd numbers between 1 and 10. Perform the following set operations:
+
+// Find the union of the two sets.
+// Find the intersection of the two sets.
+// Find the elements that are only in the even numbers set.
+// Find the elements that are only in the odd numbers set.
+
+
+// Create two Sets for even and odd numbers between 1 and 10
+let evenNumbersSet = new Set();
+let oddNumbersSet = new Set();
+
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    evenNumbersSet.add(i); // Add even numbers to evenNumbersSet
+  } else {
+    oddNumbersSet.add(i);  // Add odd numbers to oddNumbersSet
+  }
+}
+
+// Find the union of the two sets
+let unionSet = new Set([...evenNumbersSet, ...oddNumbersSet]);
+console.log("Union of even and odd numbers:", Array.from(unionSet).sort());
+
+// Find the intersection of the two sets
+let intersectionSet = new Set([...evenNumbersSet].filter(x => oddNumbersSet.has(x)));
+console.log("Intersection of even and odd numbers:", Array.from(intersectionSet).sort());
+
+// Find elements that are only in the even numbers set
+let evenOnlySet = new Set([...evenNumbersSet].filter(x => !oddNumbersSet.has(x)));
+console.log("Elements only in the even numbers set:", Array.from(evenOnlySet).sort());
+
+// Find elements that are only in the odd numbers set
+let oddOnlySet = new Set([...oddNumbersSet].filter(x => !evenNumbersSet.has(x)));
+console.log("Elements only in the odd numbers set:", Array.from(oddOnlySet).sort());
+
+
+
+// Map Iteration
+// Write a JavaScript program that uses a Map to store the names of fruits 
+// as keys and their corresponding colors as values. 
+// Write a loop to iterate through the Map and print out each fruit's name and color.
+
+
+
+// Create a Map to store fruits and their colors
+let fruitColorMap = new Map();
+
+// Add fruit-color pairs to the Map
+fruitColorMap.set("apple", "red");
+fruitColorMap.set("banana", "yellow");
+fruitColorMap.set("orange", "orange");
+fruitColorMap.set("grape", "purple");
+fruitColorMap.set("strawberry", "red");
+
+// Iterate through the Map and print fruit names and colors
+console.log("Fruit Names and Colors:");
+for (let [fruit, color] of fruitColorMap) {
+  console.log(`Fruit: ${fruit}, Color: ${color}`);
+}
+
+
+// Set Size and Clear
+// Create a JavaScript program that 
+// demonstrates the use of the Set's size property and clear() method. 
+// Create a Set of integers, add some elements to it, print its size, and then clear the Set. 
+// Print its size again to confirm that it's empty.
+
+
+// Create a Set of integers
+let integerSet = new Set();
+
+// Add some elements to the Set
+integerSet.add(10);
+integerSet.add(20);
+integerSet.add(30);
+
+// Print the size of the Set
+console.log("Size of the Set:", integerSet.size);
+
+// Clear the Set
+integerSet.clear();
+
+// Print the size again to confirm it's empty
+console.log("Size after clearing the Set:", integerSet.size);
+
+
+
+// Map Value Update
+// Implement a JavaScript program that uses a Map to store the names of cities 
+// as keys and their populations as values. Write a function that updates the 
+// population of a given city. Print the updated population of the city after the update.
+
+
+
+// Create a Map to store cities and their populations
+let cityPopulationMap = new Map();
+
+// Add city-population pairs to the Map
+cityPopulationMap.set("New York", 8622698);
+cityPopulationMap.set("Los Angeles", 3999759);
+cityPopulationMap.set("Chicago", 2716000);
+cityPopulationMap.set("Houston", 2320268);
+cityPopulationMap.set("Phoenix", 1680992);
+
+// Function to update the population of a city
+function updateCityPopulation(cityName, newPopulation) {
+  if (cityPopulationMap.has(cityName)) {
+    cityPopulationMap.set(cityName, newPopulation);
+    console.log(`Population of ${cityName} updated to ${newPopulation}`);
+  } else {
+    console.log(`${cityName} not found in the map.`);
+  }
+}
+
+// Update the population of a city (e.g., New York)
+updateCityPopulation("New York", 8741557);
+
+// Print the updated population of the city
+console.log("Updated Population of New York:", cityPopulationMap.get("New York"));
+
+
+
+// Map Keys and Values
+// Write a JavaScript program that uses a Map to store the names of countries as 
+// keys and their official languages as values. 
+// Print out the keys and values of the Map separately.
+
+
+// Create a Map to store countries and their official languages
+let countryLanguageMap = new Map();
+
+// Add country-language pairs to the Map
+countryLanguageMap.set("United States", "English");
+countryLanguageMap.set("Canada", "English and French");
+countryLanguageMap.set("France", "French");
+countryLanguageMap.set("Germany", "German");
+countryLanguageMap.set("Spain", "Spanish");
+
+// Print the keys (countries) of the Map
+console.log("Countries:");
+for (let country of countryLanguageMap.keys()) {
+  console.log(country);
+}
+
+// Print the values (official languages) of the Map
+console.log("\nOfficial Languages:");
+for (let language of countryLanguageMap.values()) {
+  console.log(language);
+}
+
+
+// Set Remove
+// Create a JavaScript program that uses a Set to store the names of colors. 
+// Implement a function to remove a specific color from the Set and 
+// print the updated set of colors.
+
+
+// Create a Set to store colors
+let colorsSet = new Set();
+
+// Add colors to the Set
+colorsSet.add("Red");
+colorsSet.add("Green");
+colorsSet.add("Blue");
+colorsSet.add("Yellow");
+colorsSet.add("Purple");
+
+// Function to remove a specific color from the Set
+function removeColor(colorToRemove) {
+  if (colorsSet.has(colorToRemove)) {
+    colorsSet.delete(colorToRemove);
+    console.log(`"${colorToRemove}" removed from the set.`);
+  } else {
+    console.log(`"${colorToRemove}" is not in the set.`);
+  }
+}
+
+// Test the function by removing a color (e.g., "Green")
+removeColor("Green");
+
+// Print the updated set of colors
+console.log("Updated Set of Colors:");
+for (let color of colorsSet) {
+  console.log(color);
+}
+
